@@ -44,5 +44,5 @@ setup(
         'coverage>=3.7.1',
         'mock>=1.0.1',
     ],
-    zip_safe=True,
+    zip_safe=False,
 )
