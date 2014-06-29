@@ -39,6 +39,7 @@ README, no LICENSE, etc). Put a description. After the repo has been created,
 go back to your base folder in your Django project and type::
 
     $ rm -rf .git # Remove the project template .git folder
+    $ rm new_project.py
     $ git init
     $ git add .
     $ git commit -m 'Project scaffolding'
