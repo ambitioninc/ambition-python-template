@@ -37,9 +37,13 @@ coverage (including branches)
 Adding the project to Github
 ----------------------------
 
-Go to github.com and create the initial public repository with nothing (i.e. no
-README, no LICENSE, etc). Put a description. After the repo has been created,
-go back to your base folder in your Django project and type::
+Go to github.com and:
+
+* Create the initial public repository with nothing (i.e. no README, no LICENSE, etc).
+* Put a description.
+
+After the repo has been created, go back to your base folder in your project
+and type::
 
     $ rm -rf .git # Remove the project template .git folder
     $ rm new_project.py

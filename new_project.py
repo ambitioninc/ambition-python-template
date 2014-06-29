@@ -55,18 +55,10 @@ parser.add_argument(
     '--extension', '-x',
     dest='extensions',
     action='append',
-    default=['py', 'rst', 'yml', 'txt'],
+    default=['py', 'rst', 'yml', 'txt', 'cfg'],
     required=False,
-    help='The file extension(s) to render (default: "py,rst,yml,txt"). '
-         'Separate multiple extensions with commas, or use -e multiple times.'
-)
-parser.add_argument(
-    '--verbose', '-v',
-    dest='verbose',
-    type=bool,
-    required=False,
-    default=False,
-    help='Enable verbose output'
+    help='The file extension(s) to render (default: "py,rst,yml,txt,cfg"). '
+         'Use -e multiple times. for multiple extensions'
 )
 
 
@@ -103,11 +95,11 @@ class ProjectSetup(object):
 
         context = self.get_context()
 
-        if self.args.verbose:
-            print 'Rendering files with extensions {0}'.format(
-                ', '.join(extensions)
-            )
+        print 'Rendering files with extensions {0}'.format(
+            ', '.join(extensions)
+        )
 
+        # Render all files with valid extensions
         for root, dirs, files in os.walk(root_dir):
             for dirname in dirs[:]:
                 if dirname.startswith('.') or dirname == '__pycache__':
@@ -131,10 +123,9 @@ class ProjectSetup(object):
                         with open(new_path, 'wb') as new_file:
                             new_file.write(template.render(context))
 
-                        if self.args.verbose:
-                            print 'Rendering file {0}'.format(new_path)
+                        print 'Rendering file {0}'.format(new_path)
 
-        # Rename any files
+        # Rename any files named 'project_name'
         for root, dirs, files in os.walk(root_dir):
             if '/env' not in root:
                 for filename in files:
@@ -157,13 +148,13 @@ class ProjectSetup(object):
                                 extension=extension
                             )
                             os.rename(old_path, new_path)
-                            if self.args.verbose:
-                                print 'Renamed file {0} to {1}.{2}'.format(
-                                    filename,
-                                    context[base_filename],
-                                    extension
-                                )
+                            print 'Renamed file {0} to {1}.{2}'.format(
+                                filename,
+                                context[base_filename],
+                                extension
+                            )
 
+        # Rename any directories named 'project_name'
         for root, dirs, files in os.walk(root_dir):
             if '/env' not in root:
                 dirname = root.split('/')[-1]
@@ -177,11 +168,10 @@ class ProjectSetup(object):
                     )
 
                     os.rename(root, new_path_name)
-                    if self.args.verbose:
-                        print 'Renamed directory {0} to {1}'.format(
-                            root,
-                            new_path_name
-                        )
+                    print 'Renamed directory {0} to {1}'.format(
+                        root,
+                        new_path_name
+                    )
 
 if __name__ == '__main__':  # pragma: no coverage
     args = parser.parse_args()
