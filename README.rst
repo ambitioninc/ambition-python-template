@@ -25,8 +25,7 @@ Once the project is copied, it is up to the user to open the setup.py file and
 modify the following args:
 
 * description: A short summary of the app
-* keywords: Relevant words associated with your project. Ex: 'api, python,
-datetime'
+* keywords: Relevant words associated with your project. Ex: 'api, python, datetime'
 * install_requires: Any required packages
 
 Other things to note:
@@ -40,8 +39,7 @@ Adding the project to Github
 
 Go to github.com and:
 
-* Create the initial public repository with nothing (i.e. no README, no LICENSE
-, etc).
+* Create the initial public repository with nothing (i.e. no README, no LICENSE, etc).
 * Put a description.
 
 After the repo has been created, go back to your base folder in your project
