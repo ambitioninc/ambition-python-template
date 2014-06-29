@@ -18,8 +18,7 @@ tests by running::
     $ virtualenv env
     $ . env/bin/activate
     $ python setup.py install
-    $ pip install -r requirements/test.txt
-    $ nosetests --cover-branches --with-coverage --cover-min-percentage=100 --cover-package={{ project_name }}
+    $ python setup.py nosetests
 
 While 100% code coverage does not make a library bug-free, it significantly
 reduces the number of easily caught bugs! Please make sure coverage is at 100%
@@ -30,6 +29,7 @@ Code Quality
 
 For code quality, please run flake8::
 
+    $ pip install flake8
     $ flake8 . --max-line-length=120 --max-complexity=10 --exclude='docs,env,*.egg'
 
 Code Styling

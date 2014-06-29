@@ -4,9 +4,8 @@ python:
   - '3.2'
   - '3.3'
 install:
-  - pip install -r requirements/test.txt
+  - pip install -r flake8
   - python setup.py install
-before_script:
-  - flake8 . --max-line-length=120 --max-complexity=10 --exclude='docs,env,*.egg'
 script:
-  - nosetests --cover-branches --with-coverage --cover-min-percentage=100 --cover-package={{ project_name }}
+  - flake8 . --max-line-length=120 --max-complexity=10 --exclude='docs,env,*.egg'
+  - python setup.py nosetests

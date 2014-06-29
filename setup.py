@@ -37,13 +37,13 @@ setup(
     ],
     license='MIT',
     install_requires=[
-    ],
-    tests_require=[
-        'coverage>=3.7.1',
-        'flake8>=2.2.0',
-        'mock>=1.0.1',
         'nose>=1.3.0',
     ],
     include_package_data=True,
-    zip_safe=False,
+    test_suite='nose.collector',
+    tests_require=[
+        'coverage>=3.7.1',
+        'mock>=1.0.1',
+    ],
+    zip_safe=True,
 )
