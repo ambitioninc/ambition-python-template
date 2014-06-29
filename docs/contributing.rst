@@ -5,7 +5,7 @@ Contributions and issues are most welcome! All issues and pull requests are
 handled through github on the `ambitioninc repository`_. Please check for any
 existing issues before filing a new one!
 
-.. _ambitioninc repository: https://github.com/ambitioninc/{{ repo-name }}
+.. _ambitioninc repository: https://github.com/ambitioninc/{{ repo_name }}
 
 Running the tests
 -----------------
@@ -13,13 +13,13 @@ Running the tests
 Once you have cloned the source code, you can run the code quality and unit
 tests by running::
 
-    $ git clone git://github.com/ambitioninc/{{ repo-name }}.git
-    $ cd {{ repo-name }}
+    $ git clone git://github.com/ambitioninc/{{ repo_name }}.git
+    $ cd {{ repo_name }}
     $ virtualenv env
     $ . env/bin/activate
     $ python setup.py install
     $ pip install -r requirements/test.txt
-    $ nosetests --cover-branches --with-coverage --cover-min-percentage=100 --cover-package={{ package-name }}
+    $ nosetests --cover-branches --with-coverage --cover-min-percentage=100 --cover-package={{ package_name }}
 
 While 100% code coverage does not make a library bug-free, it significantly
 reduces the number of easily caught bugs! Please make sure coverage is at 100%
@@ -43,7 +43,7 @@ Please arrange imports with the following style::
     from mock import patch
 
     # Local package imports
-    from {{ package-name }}.version import __version__
+    from {{ package_name }}.version import __version__
 
 Please follow `Google's python style`_ guide wherever possible.
 
@@ -54,7 +54,7 @@ Building the docs
 
 When in the project directory::
 
-    $ pip uninstall -y {{ repo-name }} && python setup.py install
+    $ pip uninstall -y {{ repo_name }} && python setup.py install
     $ cd docs
     $ make html
     $ open docs/_build/html/index.html

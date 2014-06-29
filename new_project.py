@@ -128,9 +128,8 @@ class ProjectSetup(object):
                             filename=filename
                         )
 
-                        #with open(new_path, 'wb') as new_file:
-                        #    new_file.write(template.render(context))
-                        #    pass
+                        with open(new_path, 'wb') as new_file:
+                            new_file.write(template.render(context))
 
                         if self.args.verbose:
                             print 'Rendering file {0}'.format(new_path)
@@ -157,7 +156,7 @@ class ProjectSetup(object):
                                 filename=context[base_filename],
                                 extension=extension
                             )
-                            # os.rename(old_path, new_path)
+                            os.rename(old_path, new_path)
                             if self.args.verbose:
                                 print 'Renamed file {0} to {1}.{2}'.format(
                                     filename,
@@ -177,7 +176,7 @@ class ProjectSetup(object):
                         context[dirname]
                     )
 
-                    # os.rename(root, new_path_name)
+                    os.rename(root, new_path_name)
                     if self.args.verbose:
                         print 'Renamed directory {0} to {1}'.format(
                             root,
