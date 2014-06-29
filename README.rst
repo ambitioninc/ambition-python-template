@@ -6,6 +6,9 @@ Setup Instructions
 ==================
 To start a new project with this template::
 
+    $ virtualenv env
+    $ . ./env/bin/activate
+    $ pip install jinja2
     $ python new_project.py --author-name <Your Name> --author-email your.email@ambition.com --pypi-name pypy-package-name --repo-name github-repo-name --project-name python_project_name --rtd-subdomain my-project
     or
     $ python new_project.py --help
