@@ -48,8 +48,10 @@ Please make a "develop" branch of the main project on Github and set "develop"
 as the default branch after it has been pushed.
 
 #}
+
 {{ repo_name }}
 ===============
+
 {# Please put your description here #}
 I have failed to provide a good README.rst in my project, and you should shun
 me if I do any pull requests
