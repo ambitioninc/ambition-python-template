@@ -36,12 +36,11 @@ setup(
         'Operating System :: OS Independent',
     ],
     license='MIT',
-    install_requires=[
-        'nose>=1.3.0',
-    ],
+    install_requires=[],
     include_package_data=True,
     test_suite='nose.collector',
     tests_require=[
+        'nose>=1.3.0',
         'coverage>=3.7.1',
         'mock>=1.0.1',
     ],

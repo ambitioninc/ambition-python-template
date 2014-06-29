@@ -17,6 +17,7 @@ tests by running::
     $ cd {{ repo_name }}
     $ virtualenv env
     $ . env/bin/activate
+    $ pip install nose
     $ python setup.py install
     $ python setup.py nosetests
 
