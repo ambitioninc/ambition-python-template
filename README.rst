@@ -38,11 +38,12 @@ Go to github.com and create the initial public repository with nothing (i.e. no
 README, no LICENSE, etc). Put a description. After the repo has been created,
 go back to your base folder in your Django project and type::
 
-    git init
-    git add .
-    git commit -m 'Project scaffolding'
-    git remote add origin git@github.com:user-or-org-name/repo-name.git
-    git push -u origin master
+    $ rm -rf .git # Remove the project template .git folder
+    $ git init
+    $ git add .
+    $ git commit -m 'Project scaffolding'
+    $ git remote add origin git@github.com:ambitioninc/repo-name.git
+    $ git push -u origin master
 
 Please make a "develop" branch of the main project on Github and set "develop"
 as the default branch after it has been pushed.
