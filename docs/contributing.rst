@@ -10,8 +10,7 @@ existing issues before filing a new one!
 Running the tests
 -----------------
 
-Once you have cloned the source code, you can run the code quality and unit
-tests by running::
+To get the source source code and run the unit tests, run::
 
     $ git clone git://github.com/ambitioninc/{{ repo_name }}.git
     $ cd {{ repo_name }}
@@ -55,9 +54,9 @@ Building the docs
 
 When in the project directory::
 
+    $ pip install -r requirements/docs.txt
     $ pip uninstall -y {{ repo_name }} && python setup.py install
-    $ cd docs
-    $ make html
+    $ cd docs && make html
     $ open docs/_build/html/index.html
 
 Vulnerability Reporting
