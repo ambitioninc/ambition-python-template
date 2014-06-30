@@ -10,8 +10,7 @@ existing issues before filing a new one!
 Running the tests
 -----------------
 
-Once you have cloned the source code, you can run the code quality and unit
-tests by running::
+To get the source source code and run the unit tests, run::
 
     $ git clone git://github.com/ambitioninc/{{ repo_name }}.git
     $ cd {{ repo_name }}
@@ -35,7 +34,9 @@ For code quality, please run flake8::
 
 Code Styling
 ------------
-Please arrange imports with the following style::
+Please arrange imports with the following style
+
+.. code-block:: python
 
     # Standard library imports
     import os
@@ -55,10 +56,21 @@ Building the docs
 
 When in the project directory::
 
+    $ pip install -r requirements/docs.txt
     $ pip uninstall -y {{ repo_name }} && python setup.py install
-    $ cd docs
-    $ make html
+    $ cd docs && make html
     $ open docs/_build/html/index.html
+
+Release Checklist
+-----------------
+
+Before a new release, please go through the following checklist:
+
+* Bump version in {{ project_name }}/version.py
+* Git tag the version
+* Add a release note in docs/release_notes/
+* Add a link to the newest release note to docs/release_notes/index.rst
+* Upload to pypi
 
 Vulnerability Reporting
 -----------------------

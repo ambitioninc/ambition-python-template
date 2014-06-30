@@ -56,6 +56,23 @@ and type::
 Please make a "develop" branch of the main project on Github and set "develop"
 as the default branch after it has been pushed.
 
+Add Documentation
+-----------------
+
+Some project scaffolding documentation has been added for you, but you will
+need to add docstrings to your functions, classes, and methods yourself. A
+basic example has been added in docs/ref/project_name, but you'll have to
+manually tweak that yourself.
+
+Don't forget to add a github webhook to ReadTheDocs so the documentaion is
+automatically updated on each build.
+
+Python Versions
+---------------
+
+This project automatically has TravisCI build for python 2.7, 3.2, and 3.3. If
+you'd prefer just 2.7, please modify .travis.yml and setup.py's classifiers.
+
 #}
 
 {{ repo_name }}
