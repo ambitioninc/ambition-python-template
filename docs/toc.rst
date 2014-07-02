@@ -8,8 +8,3 @@ Table of Contents
    ref/{{ project_name }}
    contributing
    release_notes/index
-
-Indices and tables
-==================
-
-* :ref:`search`
