@@ -7,6 +7,7 @@ Table of Contents
    index
    ref/{{ project_name }}
    contributing
+   release_notes/index
 
 Indices and tables
 ==================
