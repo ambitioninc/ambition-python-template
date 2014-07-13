@@ -29,10 +29,10 @@ setup(
     packages=find_packages(),
     classifiers=[
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
     license='MIT',
@@ -40,9 +40,10 @@ setup(
     include_package_data=True,
     test_suite='nose.collector',
     tests_require=[
-        'nose>=1.3.0',
         'coverage>=3.7.1',
+        'flake8>=2.2.0',
         'mock>=1.0.1',
+        'nose>=1.3.0',
     ],
     zip_safe=False,
 )
