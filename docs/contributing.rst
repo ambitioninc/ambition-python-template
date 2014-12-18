@@ -72,7 +72,9 @@ Before a new release, please go through the following checklist:
 * Bump version in {{ project_name }}/version.py
 * Add a release note in docs/release_notes.rst
 * Git tag the version
-* Upload to pypi
+* Upload to pypi::
+
+    python setup.py sdist bdist_wheel upload
 
 Vulnerability Reporting
 -----------------------
