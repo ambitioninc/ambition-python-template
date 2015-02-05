@@ -17,12 +17,12 @@ Setup Instructions
 ==================
 To start a new project with this template::
 
-    $ virtualenv env
-    $ . ./env/bin/activate
-    $ pip install jinja2
-    $ python new_project.py --author-name <Your Name> --author-email your.email@ambition.com --pypi-name pypy-package-name --repo-name github-repo-name --project-name python_project_name --rtd-subdomain my-project
-    or
-    $ python new_project.py --help
+    virtualenv env
+    . ./env/bin/activate
+    pip install jinja2
+    python new_project.py --author-name <Your Name> --author-email your.email@ambition.com --pypi-name pypy-package-name --repo-name github-repo-name --project-name python_project_name --rtd-subdomain my-project
+    # or
+    python new_project.py --help
 
 
 This will create all of the necessary folders and scaffolding for an app with
@@ -56,13 +56,15 @@ Go to github.com and:
 After the repo has been created, go back to your base folder in your project
 and type::
 
-    $ rm -rf .git # Remove the project template .git folder
-    $ rm new_project.py
-    $ git init
-    $ git add .
-    $ git commit -m 'Project scaffolding'
-    $ git remote add origin git@github.com:ambitioninc/repo-name.git
-    $ git push -u origin master
+    rm -rf .git # Remove the project template .git folder
+    rm new_project.py
+
+    git init
+    git add .
+
+    git commit -m 'Project scaffolding'
+    git remote add origin git@github.com:ambitioninc/repo-name.git
+    git push -u origin master
 
 Please make a "develop" branch of the main project on Github and set "develop"
 as the default branch after it has been pushed.
@@ -85,7 +87,6 @@ This project automatically has TravisCI build for python 2.7, 3.2, and 3.3. If
 you'd prefer just 2.7, please modify .travis.yml and setup.py's classifiers.
 
 #}
-
 {{ repo_name }}
 ===============
 
