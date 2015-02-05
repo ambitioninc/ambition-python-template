@@ -60,8 +60,7 @@ Building the docs
 When in the project directory::
 
     $ pip install -r requirements/docs.txt
-    $ pip uninstall -y {{ repo_name }} && python setup.py install
-    $ cd docs && make html
+    $ python setup.py build_sphinx
     $ open docs/_build/html/index.html
 
 Release Checklist
@@ -74,6 +73,7 @@ Before a new release, please go through the following checklist:
 * Git tag the version
 * Upload to pypi::
 
+    pip install wheel
     python setup.py sdist bdist_wheel upload
 
 Vulnerability Reporting

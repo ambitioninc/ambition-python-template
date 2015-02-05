@@ -67,7 +67,7 @@ class ProjectSetup(object):
     def __init__(self, args):
         self.args = args
 
-    excluded_files = ['new_project.py']
+        self.excluded_files = ['new_project.py']
 
     def get_context(self):
         """
@@ -96,9 +96,9 @@ class ProjectSetup(object):
 
         context = self.get_context()
 
-        print 'Rendering files with extensions {0}'.format(
+        print('Rendering files with extensions {0}'.format(
             ', '.join(extensions)
-        )
+        ))
 
         # Render all files with valid extensions
         for root, dirs, files in os.walk(root_dir):
@@ -123,8 +123,9 @@ class ProjectSetup(object):
 
                         with open(new_path, 'wb') as new_file:
                             new_file.write(template.render(context))
+                            new_file.write("\n")
 
-                        print 'Rendering file {0}'.format(new_path)
+                        print('Rendering file {0}'.format(new_path))
 
         # Rename any files named 'project_name'
         for root, dirs, files in os.walk(root_dir):
@@ -149,11 +150,11 @@ class ProjectSetup(object):
                                 extension=extension
                             )
                             os.rename(old_path, new_path)
-                            print 'Renamed file {0} to {1}.{2}'.format(
+                            print('Renamed file {0} to {1}.{2}'.format(
                                 filename,
                                 context[base_filename],
                                 extension
-                            )
+                            ))
 
         # Rename any directories named 'project_name'
         for root, dirs, files in os.walk(root_dir):
@@ -169,10 +170,10 @@ class ProjectSetup(object):
                     )
 
                     os.rename(root, new_path_name)
-                    print 'Renamed directory {0} to {1}'.format(
+                    print('Renamed directory {0} to {1}'.format(
                         root,
                         new_path_name
-                    )
+                    ))
 
 if __name__ == '__main__':  # pragma: no coverage
     args = parser.parse_args()
