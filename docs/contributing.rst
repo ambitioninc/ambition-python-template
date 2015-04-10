@@ -76,6 +76,8 @@ Before a new release, please go through the following checklist:
     pip install wheel
     python setup.py sdist bdist_wheel upload
 
+Publishing to pypi can be accomplished by running python publish.py
+
 Vulnerability Reporting
 -----------------------
 
