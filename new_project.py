@@ -56,9 +56,9 @@ parser.add_argument(
     '--extension', '-x',
     dest='extensions',
     action='append',
-    default=['py', 'rst', 'yml', 'txt', 'cfg'],
+    default=['py', 'rst', 'yml', 'txt', 'cfg', 'in'],
     required=False,
-    help='The file extension(s) to render (default: "py,rst,yml,txt,cfg"). '
+    help='The file extension(s) to render (default: "py,rst,yml,txt,cfg,in"). '
          'Use -e multiple times. for multiple extensions'
 )
 
@@ -105,7 +105,7 @@ class ProjectSetup(object):
             for dirname in dirs[:]:
                 if dirname.startswith('.') or dirname == '__pycache__':
                     dirs.remove(dirname)
-            if '/env' not in root:
+            if '/env' not in root or '/venv' not in root:
                 env = Environment(loader=FileSystemLoader(root))
 
                 for filename in files:
@@ -129,7 +129,7 @@ class ProjectSetup(object):
 
         # Rename any files named 'project_name'
         for root, dirs, files in os.walk(root_dir):
-            if '/env' not in root:
+            if '/env' not in root or '/venv' not in root:
                 for filename in files:
                     if filename.endswith(('.pyo', '.pyc', '.py.class')):
                         # Ignore some files as they cause various breakages.
@@ -158,7 +158,7 @@ class ProjectSetup(object):
 
         # Rename any directories named 'project_name'
         for root, dirs, files in os.walk(root_dir):
-            if '/env' not in root:
+            if '/env' not in root or '/venv' not in root:
                 dirname = root.split('/')[-1]
 
                 if dirname in context.keys():

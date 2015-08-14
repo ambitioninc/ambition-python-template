@@ -4,13 +4,6 @@
 .. image:: https://coveralls.io/repos/ambitioninc/{{ repo_name }}/badge.png?branch=develop
     :target: https://coveralls.io/r/ambitioninc/{{ repo_name }}?branch=develop
 
-.. image:: https://pypip.in/v/{{ repo_name }}/badge.png
-    :target: https://pypi.python.org/pypi/{{ repo_name }}/
-    :alt: Latest PyPI version
-
-.. image:: https://pypip.in/d/{{ repo_name }}/badge.png
-    :target: https://pypi.python.org/pypi/{{ repo_name }}/
-    :alt: Number of PyPI downloads
 {#
 
 Setup Instructions
@@ -105,10 +98,10 @@ To install the latest code directly from source, type::
     pip install git+git://github.com/ambitioninc/{{ repo_name }}.git
 
 Documentation
-=============
+-------------
 
 Full documentation is available at http://{{ rtd_subdomain }}.readthedocs.org
 
 License
-=======
+-------
 MIT License (see LICENSE)
