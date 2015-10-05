@@ -19,8 +19,7 @@ To get the source source code and run the unit tests, run::
     $ cd {{ repo_name }}
     $ virtualenv env
     $ . env/bin/activate
-    $ pip install nose
-    $ python setup.py install
+    $ pip install -e .[all]
     $ python setup.py nosetests
 
 While 100% code coverage does not make a library bug-free, it significantly
@@ -32,7 +31,7 @@ Code Quality
 
 For code quality, please run flake8::
 
-    $ pip install flake8
+    $ pip install -e .[test]
     $ flake8 .
 
 Code Styling
@@ -59,7 +58,7 @@ Building the docs
 
 When in the project directory::
 
-    $ pip install -r requirements/docs.txt
+    $ pip install -e .[docs]
     $ python setup.py build_sphinx
     $ open docs/_build/html/index.html
 
@@ -73,8 +72,8 @@ Before a new release, please go through the following checklist:
 * Git tag the version
 * Upload to pypi::
 
-    pip install wheel
-    python setup.py sdist bdist_wheel upload
+    pip install -e .[packaging]
+    python publish.py
 
 Publishing to pypi can be accomplished by running python publish.py
 
