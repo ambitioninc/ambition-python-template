@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import os
+import sys
 from datetime import datetime
 
 from jinja2 import Environment, FileSystemLoader
@@ -121,7 +122,12 @@ class ProjectSetup(object):
                             filename=filename
                         )
 
-                        with open(new_path, 'wb') as new_file:
+                        if sys.version_info[0] < 3:
+                            write_args = 'wb'
+                        else:
+                            write_args = 'w'
+
+                        with open(new_path, write_args) as new_file:
                             new_file.write(template.render(context))
                             new_file.write("\n")
 
