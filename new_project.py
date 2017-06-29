@@ -33,6 +33,13 @@ parser.add_argument(
     help='Name for the package on pypi'
 )
 parser.add_argument(
+    '--github-org', '-o',
+    dest='github_org',
+    type=str,
+    required=True,
+    help='Name of the organization on GitHub'
+)
+parser.add_argument(
     '--repo-name', '-r',
     dest='repo_name',
     type=str,
@@ -81,6 +88,7 @@ class ProjectSetup(object):
             'pypi_name': self.args.pypi_name,
             'author_name': self.args.author_name,
             'author_email': self.args.author_email,
+            'github_org': self.args.github_org,
             'repo_name': self.args.repo_name,
             'project_name': self.args.project_name,
             'rtd_subdomain': self.args.rtd_subdomain,
